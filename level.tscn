@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dpad5ovmq8q37"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 178.0
+offset_top = 181.0
+offset_right = 369.0
+offset_bottom = 247.0
+theme_override_font_sizes/font_size = 50
+text = "Level 1"
