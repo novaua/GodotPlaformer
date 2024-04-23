@@ -15,10 +15,17 @@ run/main_scene="res://Menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1000
+window/size/viewport_height=800
+window/size/resizable=false
+
 [dotnet]
 
 project/assembly_name="Godot Game"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
