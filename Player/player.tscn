@@ -210,20 +210,18 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Player" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Playeer" type="CharacterBody2D"]
 script = ExtResource("1_s5cuv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_sgyn8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -14)
 sprite_frames = SubResource("SpriteFrames_hcaog")
 animation = &"Fall"
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-5, 2)
 zoom = Vector2(2.3, 2.3)
 process_callback = 0
@@ -232,3 +230,5 @@ limit_right = 1700
 limit_bottom = 675
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
+
+[node name="Player" type="Node2D" parent="."]
