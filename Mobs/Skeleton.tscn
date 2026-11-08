@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bsomjv6y3we2l" path="res://oak_woods_v1.0/Skeleton/Walk.png" id="4_yil2o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2rdhu"]
-radius = 7.0
+radius = 9.0
+height = 40.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkh3c"]
 atlas = ExtResource("1_yhptt")
@@ -104,7 +105,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_1us04")
 }],
 "loop": true,
-"name": &"Idele",
+"name": &"Idle",
 "speed": 10.0
 }, {
 "frames": [{
@@ -121,7 +122,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_t7rjf")
 }],
 "loop": true,
-"name": &"Run",
+"name": &"Walk",
 "speed": 10.0
 }]
 
@@ -130,6 +131,8 @@ radius = 67.0
 height = 140.0
 
 [node name="Skeleton" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_6pjhw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -140,15 +143,14 @@ shape = SubResource("CapsuleShape2D_2rdhu")
 position = Vector2(-2, -3)
 scale = Vector2(0.653333, 0.653333)
 sprite_frames = SubResource("SpriteFrames_7mh2h")
-animation = &"Idele"
-frame_progress = 0.829325
+animation = &"Idle"
 
 [node name="Detector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource("CapsuleShape2D_iq6jd")
-
-[node name="Skeleton" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]
