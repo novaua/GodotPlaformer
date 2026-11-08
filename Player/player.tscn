@@ -4,6 +4,8 @@
 [ext_resource type="Script" path="res://Player/CharacterBody2D.gd" id="1_s5cuv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sgyn8"]
+radius = 10.0
+height = 40.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_665ep"]
 atlas = ExtResource("1_li76e")
@@ -210,7 +212,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Playeer" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_s5cuv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -219,16 +223,16 @@ shape = SubResource("CapsuleShape2D_sgyn8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -14)
 sprite_frames = SubResource("SpriteFrames_hcaog")
-animation = &"Fall"
+animation = &"Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-5, 2)
 zoom = Vector2(2.3, 2.3)
 process_callback = 0
 limit_left = 0
+limit_top = 0
 limit_right = 1700
 limit_bottom = 675
+limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
-
-[node name="Player" type="Node2D" parent="."]
